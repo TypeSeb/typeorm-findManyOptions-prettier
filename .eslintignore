@@ -1,0 +1,5 @@
+!.eslintrc
+build
+node_modules
+coverage
+*.md

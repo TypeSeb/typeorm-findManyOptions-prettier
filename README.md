@@ -11,15 +11,17 @@ class Entity {
 	description: string
 }
 
-const builder = new Builder<Entity>()
-	.where({ name: 'foo' })
-	.andWhere(
-		new BracketBuilder<Entity>()
-		.where({description: 'desc 1'})
-		.orWhere({description: 'desc 2'}))
-	.take(7)
-	.skip(5)
-	.build()
+const builder = new Builder<ResourceEntity>()
+  .where({ name: 'asd' })
+  .andWhere(
+    new BracketBuilder<ResourceEntity>()
+    .where({description: 'A'})
+    .orWhere({description: 'B'}))
+  .orderBy({name: 'asc'})
+  .andBy({description: 'asc'})
+  .take(7)
+  .skip(5)
+  .build()
 ```
 
 

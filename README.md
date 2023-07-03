@@ -1,6 +1,3 @@
-# typeorm-findManyOptions-prettier
-[[_TOC_]]
-
 # About the project
 This package can be used to simplify the handling of `findManyOptions` and to be able to write more beautifully.
 

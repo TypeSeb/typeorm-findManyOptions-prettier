@@ -1,5 +1,5 @@
 # About the project
-This package can be used to simplify the handling of `findManyOptions` and to be able to write more beautifully.
+This package provides a method-oriented concatenation of the filter and sort function of `findManyOptions`. Here it is possible to clearly show which filters and sorts are applied by using expressive notation. Furthermore, the package offers the possibility to write a simple parenthesis condition as in SQL. Through strong typing, only methods that make sense in their order and readability are allowed. The typing of the entity is also transferred to the parameter methods, thus ensuring that only properties of the entity can be filtered and sorted.
 
 # Documentation
 ## Usage
@@ -11,10 +11,10 @@ class Entity {
 	description: string
 }
 
-const builder = new Builder<ResourceEntity>()
+const findManyOptions = new Builder<Entity>()
   .where({ name: 'asd' })
   .andWhere(
-    new BracketBuilder<ResourceEntity>()
+    new BracketBuilder<Entity>()
     .where({description: 'A'})
     .orWhere({description: 'B'}))
   .orderBy({name: 'asc'})
